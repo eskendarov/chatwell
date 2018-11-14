@@ -1,0 +1,47 @@
+.button {
+  -fx-text-fill: white;
+  -fx-font-weight: bold;
+  -fx-background-color: linear-gradient(rgb(255, 67, 63), rgba(70, 0, 1, 0.51));
+  -fx-effect: dropshadow(three-pass-box, rgb(58, 0, 17), 5, 0.0, 0, 3);
+}
+
+.label {
+  -fx-text-fill: #ffffff;
+  -fx-effect: dropshadow(three-pass-box, rgb(58, 0, 17), 5, 0.0, 0, 3);
+}
+
+.text-field {
+  -fx-text-fill: black;
+  -fx-font-family: auto;
+  -fx-background-color: linear-gradient(rgb(255, 255, 255), rgb(255, 174, 112));
+  -fx-effect: dropshadow(three-pass-box, rgb(52, 0, 17), 5, 0.0, 0, 2);
+}
+
+.text-area {
+  -fx-background-color: rgb(255, 0, 8);
+  -fx-padding: 2;
+  -fx-font-size: 16;
+  -fx-highlight-fill: #00c99d;
+  -fx-effect: dropshadow(three-pass-box, rgb(49, 0, 17), 5, 0.0, 0, 2);
+}
+
+.progress-bar {
+  -fx-background-color: rgb(255, 0, 8);
+  -fx-padding: 2;
+  -fx-font-size: 18;
+  -fx-highlight-fill: #00c99d;
+  -fx-effect: dropshadow(three-pass-box, rgb(49, 0, 17), 5, 0.0, 0, 2);
+}
+
+.text-area .content {
+  -fx-background-image: url(back.png);
+  -fx-background-repeat: repeat;
+  -fx-background-position: center;
+  -fx-background-color: #ffeae8;
+}
+
+.list-view {
+  -fx-background-color: rgb(255, 0, 8);
+  -fx-padding: 2;
+  -fx-effect: dropshadow(three-pass-box, rgb(49, 0, 17), 5, 0.0, 0, 2);
+}

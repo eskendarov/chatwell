@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<HBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" spacing="5.0" style="-fx-background-color: #00c99d; "
+      stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.121"
+      fx:controller="ru.eskendarov.ea.chatwell.client.Controller">
+  <padding>
+    <Insets topRightBottomLeft="10"/>
+  </padding>
+  
+  <VBox fx:id="authorizationPanel" alignment="TOP_CENTER" maxWidth="250" minWidth="250" spacing="5.0"
+        style="-fx-background-image: url(angry.png);-fx-background-repeat: no-repeat;-fx-background-size: 280;-fx-background-position: center">
+    <TextField fx:id="loginField" promptText="Логин"/>
+    <HBox maxHeight="Infinity" maxWidth="Infinity" spacing="5">
+      <PasswordField fx:id="passwordField" onAction="#sendAuthorization" promptText="Пароль"/>
+      <Button onAction="#sendAuthorization" prefWidth="100" text="Войти"/>
+    </HBox>
+    <VBox alignment="BOTTOM_CENTER" maxWidth="Infinity" spacing="5" VBox.vgrow="ALWAYS">
+      <Button maxWidth="Infinity" onAction="#signUpPanelOn" text="Регистрация"/>
+      <Button maxWidth="Infinity" onAction="#sendAuthAsGuest" text="Войти как гость"/>
+    </VBox>
+  </VBox>
+  <VBox fx:id="signUpPanel" alignment="TOP_CENTER" maxWidth="250" minWidth="250" spacing="5.0"
+        style="-fx-background-image: url(angry2.png);-fx-background-repeat: no-repeat;-fx-background-size: 280;-fx-background-position: bottom">
+    <HBox spacing="5.0" alignment="CENTER">
+      <Label text="Mail :"/>
+      <TextField fx:id="loginReg" promptText="Логин" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <HBox spacing="5.0" alignment="CENTER">
+      <Label text="Pass.:"/>
+      <TextField fx:id="passwordReg" onAction="#sendSignUp" promptText="Пароль" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <HBox spacing="5.0" alignment="CENTER">
+      <Label text="Nick.:"/>
+      <TextField fx:id="nicknameReg" promptText="Никнейм" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <Button maxWidth="Infinity" onAction="#sendSignUp" text="Зарегистрировать"/>
+    <VBox alignment="BOTTOM_CENTER" maxWidth="Infinity" spacing="5" VBox.vgrow="ALWAYS">
+      <Button maxWidth="Infinity" onAction="#authPanelOn" text="Выход"/>
+    </VBox>
+  </VBox>
+  <VBox fx:id="confirmMailPanel" alignment="TOP_CENTER" maxWidth="250" minWidth="250" spacing="5.0"
+        style="-fx-background-image: url(angry2.png);-fx-background-repeat: no-repeat;-fx-background-size: 280;-fx-background-position: bottom">
+    <HBox spacing="5.0" alignment="CENTER">
+      <TextField fx:id="codeMailField" promptText="Вставьте код с email" HBox.hgrow="ALWAYS"/>
+    </HBox>
+    <Button maxWidth="Infinity" onAction="#sendCodeFromMail" text="Потвердить код"/>
+    <VBox alignment="BOTTOM_CENTER" maxWidth="Infinity" spacing="5" VBox.vgrow="ALWAYS">
+      <Button maxWidth="Infinity" onAction="#authPanelOn" text="Выход"/>
+    </VBox>
+  </VBox>
+  <VBox fx:id="userListPanel" alignment="TOP_CENTER" maxWidth="250" minWidth="250" spacing="5.0" HBox.hgrow="ALWAYS">
+    <ListView fx:id="userList" maxWidth="250" VBox.vgrow="ALWAYS">
+    </ListView>
+    <Button maxWidth="Infinity" onAction="#closeConnection" text="Покинуть чат"/>
+  </VBox>
+  <VBox spacing="5.0" HBox.hgrow="ALWAYS">
+    <padding>
+      <Insets left="5"/>
+    </padding>
+    <TextArea fx:id="chatTextArea" editable="false" VBox.vgrow="ALWAYS"/>
+    <HBox spacing="5.0">
+      <TextField fx:id="messageField" onAction="#sendMessageToChat" promptText="Введите сообщение..."
+                 HBox.hgrow="ALWAYS"/>
+      <Button onAction="#sendMessageToChat" text="Отправить"/>
+    </HBox>
+  </VBox>
+</HBox>
