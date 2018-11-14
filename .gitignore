@@ -1,0 +1,11 @@
+
+# IntelliJ project files
+.idea
+*.iml
+
+#Maven target files
+target
+
+/server/mail.setting
+*.db
+/client/chat.history
